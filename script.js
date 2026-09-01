@@ -1,0 +1,59 @@
+const goalsArray = [
+    {
+        goalName: "Work Goal 1",
+        deadline: new Date("2026-11-15")
+    },
+    {
+        goalName: "Work Goal 2",
+        deadline: new Date("2027-05-15")
+    },
+    {
+        goalName: "Personal Goal Omicron Persei 8",
+        deadline: new Date("2026-11-30")
+    },
+    {
+        goalName: "Personal Goal eta mu",
+        deadline: new Date("2027-07-01")
+    },
+    {
+        goalName: "Task - 'Earl' ",
+        deadline: new Date("2027-01-01")
+    }
+]
+
+function listGoals(arr) {
+    const sortedArr = arr.sort((a,b)=>{
+        return a.deadline - b.deadline
+    });
+
+    const today = new Date();
+    const dayOfWeek = today.toLocaleDateString('en-US', { weekday: 'long' });
+    const month = today.toLocaleDateString("default", { month: "long" });
+    const dateOfMonth = today.toLocaleString('en-US', { day: '2-digit' });
+    const year = today.getFullYear();
+    document.getElementById("todaysDate").innerText = `Today is ${dayOfWeek} ${month}  ${dateOfMonth}, ${year}.`;
+
+    sortedArr.map(async (goal, i) => {
+        const deadline = goal.deadline;
+        const goalName = goal.goalName;
+        const goalDaysUntil = await Math.round((deadline - today) / (1000 * 60 * 60 * 24))
+
+        let goalSection = document.createElement("section");
+        let goalHeader = document.createElement("h4");
+        let goalDaysUntilHTML = document.createElement("p");
+
+        goalSection.className = "goal-container";
+        goalHeader.className = "";
+        goalDaysUntilHTML.className = "days-until";
+
+        goalHeader.innerText = `Days until ${goalName} Deadline:`;
+        goalDaysUntilHTML.innerText = goalDaysUntil;
+
+        await goalSection.appendChild(goalHeader);
+        await goalSection.appendChild(goalDaysUntilHTML)
+
+        document.getElementById("goals-container").appendChild(goalSection);
+    })
+}
+
+listGoals(goalsArray);

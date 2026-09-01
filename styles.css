@@ -1,0 +1,18 @@
+body {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+#goals-container {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+#header-section {
+    box-sizing: border-box;
+    order: 0;
+}
+
+#today {
+    box-sizing: border-box;
+    order: 1;
+}
