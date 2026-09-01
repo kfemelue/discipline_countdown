@@ -43,7 +43,7 @@ function listGoals(arr) {
         const goalDaysUntil = await Math.round((deadline - today) / (1000 * 60 * 60 * 24))
 
         let goalSection = document.createElement("section");
-        let goalHeader = document.createElement("h4");
+        let goalHeader = document.createElement("h3");
         let goalDaysUntilHTML = document.createElement("p");
 
         goalSection.className = "goal-container";
