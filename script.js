@@ -1,18 +1,18 @@
 const goalsArray = [
     {
-        goalName: "Work Goal 1",
+        goalName: "Work Milestone 1",
         deadline: new Date("2026-11-15")
     },
     {
-        goalName: "Work Goal 2",
+        goalName: "Work Milestone 2",
         deadline: new Date("2027-05-15")
     },
     {
-        goalName: "Personal Goal Omicron Persei 8",
+        goalName: "Personal Goal - 'Omicron Persei 8' ",
         deadline: new Date("2026-11-30")
     },
     {
-        goalName: "Personal Goal eta mu",
+        goalName: "Personal Goal - 'eta mu' ",
         deadline: new Date("2027-07-01")
     },
     {
