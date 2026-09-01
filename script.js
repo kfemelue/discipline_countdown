@@ -18,6 +18,10 @@ const goalsArray = [
     {
         goalName: "Task - 'Earl' ",
         deadline: new Date("2027-01-01")
+    },
+    {
+        goalName: "Personal Goal - Who Decided That",
+        deadline: new Date("2027-09-01")
     }
 ]
 
