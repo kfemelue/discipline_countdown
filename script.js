@@ -1,4 +1,5 @@
 const goalsArray = [
+    // using code names becuase site is publicly deployed
     {
         goalName: "Work Milestone 1",
         deadline: new Date("2026-11-15")
@@ -60,4 +61,8 @@ function listGoals(arr) {
     })
 }
 
-listGoals(goalsArray);
+window.addEventListener("load", ()=>{
+    listGoals(goalsArray)
+})
+
+
