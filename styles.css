@@ -23,9 +23,11 @@ body {
 }
 
 .goal-container {
+    width: 80%;
     margin: 2%;
     padding: 3%;
     border-style: solid;
     border-color: #201A1E;
     background-color: #D0B49f;
+    justify-self: center;
 }
