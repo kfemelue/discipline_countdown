@@ -64,5 +64,3 @@ function listGoals(arr) {
 window.addEventListener("load", ()=>{
     listGoals(goalsArray)
 })
-
-
