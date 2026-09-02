@@ -38,10 +38,10 @@ function listGoals(arr) {
     const year = today.getFullYear();
     document.getElementById("todaysDate").innerText = `Today is ${dayOfWeek} ${month}  ${dateOfMonth}, ${year}.`;
 
-    sortedArr.map(async (goal, i) => {
+    sortedArr.map(async (goal) => {
         const deadline = goal.deadline;
         const goalName = goal.goalName;
-        const goalDaysUntil = await Math.round((deadline - today) / (1000 * 60 * 60 * 24))
+        const goalDaysUntil = Math.floor((deadline - today) / (1000 * 60 * 60 * 24))
 
         let goalSection = document.createElement("section");
         let goalHeader = document.createElement("h3");
@@ -54,11 +54,11 @@ function listGoals(arr) {
         goalHeader.innerText = `Days until ${goalName} Deadline:`;
         goalDaysUntilHTML.innerText = goalDaysUntil;
 
-        await goalSection.appendChild(goalHeader);
-        await goalSection.appendChild(goalDaysUntilHTML)
+        goalSection.appendChild(goalHeader);
+        goalSection.appendChild(goalDaysUntilHTML)
 
         document.getElementById("goals-container").appendChild(goalSection);
-    })
+    });
 }
 
 window.addEventListener("load", ()=>{
